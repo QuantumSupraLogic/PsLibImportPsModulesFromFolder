@@ -12,9 +12,9 @@ function Import-PsModulesFromFolder {
     process {
         $User = $true
         if ($User) {
-            $env:PSModulePath = $env:PSModulePath.Replace(";$HOME\Documents\WindowsPowerShell\Modules", '')
-            $env:PSModulePath += ";$HOME\Documents\WindowsPowerShell\Modules"
-            $destination = "$HOME\Documents\WindowsPowerShell\Modules" 
+            $env:PSModulePath = $env:PSModulePath.Replace(";$HOME\Documents\PowerShell\Modules", '')
+            $env:PSModulePath += ";$HOME\Documents\PowerShell\Modules"
+            $destination = "$HOME\Documents\PowerShell\Modules" 
         }
         else {
             $destination = "$Env:ProgramFiles\WindowsPowerShell\Modules" 
@@ -26,7 +26,7 @@ function Import-PsModulesFromFolder {
         
         Import-Module -Name $module 
         
-        #Get-Command -Module $module
+        Get-Command -Module $module
     }
     
     end {
