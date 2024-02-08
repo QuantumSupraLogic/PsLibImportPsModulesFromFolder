@@ -24,7 +24,7 @@ function Import-PsModulesFromFolder {
         if (Get-Module $module) {
             Remove-Module $module
         }
-        Join-Path $sourceDir "$module\$module" | Copy-Item -Destination $destination -Recurse -Force
+        Join-Path $sourceDir "$module" | Copy-Item -Destination $destination -Recurse -Force
         
         Import-Module -Name $module 
         
